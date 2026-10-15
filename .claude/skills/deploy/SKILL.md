@@ -5,7 +5,7 @@ allowed-tools: Bash, Read
 disable-model-invocation: true
 ---
 
-Deploy site files to S3 and invalidate CloudFront cache.
+Deploy site  files to S3 and invalidate CloudFront cache.
 
 Steps:
 - [ ] Get terraform outputs: `cd terraform && terraform output -json`
