@@ -13,7 +13,7 @@ Static HTML/CSS portfolio website deployed to AWS using S3 + CloudFront, provisi
 - **style.css** — All styling (~1145 lines), mobile-first responsive (breakpoints: 900px, 768px, 600px)
 - **privacy.html / terms.html** — Standalone pages with inline styles
 - **images/** — Static assets (logo, profile, course thumbnails, hero background)
-- Pure HTML5 + CSS3, no JavaScript, no build step
+- Pure HTML5 and CSS3. No JavaScript. No build step. No framework.
 
 ### Infrastructure (`terraform/`)
 - AWS S3 bucket for static site hosting (private, OAC-based access)
@@ -88,3 +88,8 @@ aws s3 sync . s3://$BUCKET_NAME --exclude "terraform/*" --exclude ".git/*" --exc
 - GitHub Actions uses OIDC — no stored AWS access keys
 - All infrastructure changes go through Terraform — never modify AWS resources manually
 - Site content changes deploy automatically via GitHub Actions on push to main
+- No JavaScript in this project
+- CSS uses mobile-first approach with breakpoints at 900px, 768px, and 600px
+
+## Safety
+Never put secrets in this file. No API keys, passwords, or AWS credentials.
